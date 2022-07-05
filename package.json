@@ -19,6 +19,7 @@
   "author": "PhilipJovanovic",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.1.2",
     "node-rest-client": "^3.1.1"
   }
 }

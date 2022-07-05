@@ -12,29 +12,30 @@ async function main() {
     try {
         const price = await api.scalaPrice()
         console.log("[Promised] ScalaPrice", price)
-    } catch (e) {
-        console.log(e)
-    }
 
-    api.scalaPrice((err, data) => {
-        if(err) return console.log("Error", err)
+        /*  api.scalaPrice((err, data) => {
+            if (err) return console.log("Error", err)
+            console.log("[Callback] ScalaPrice", data)
+         }) */
 
-        console.log("[Callback] ScalaPrice", data)
-    })
-
-    /* Test User */
-    try {
+        /* Test User */
         const user = await api.getUser()
-        console.log("[Promised] getUser", user)
+        console.log("[Promised] getUser", user.user.name)
+
+        /*  api.getUser((err, data) => {
+            if (err) return console.log("Error", err)
+            console.log("[Callback] ScalaPrice", data.user.name)
+        }) */
+
+        /* Post Shortlink */
+        const link = await api.postLink({
+            enabled: true,
+            url: 'snow'
+        })
+        console.log("[Promised] postLink", link)
     } catch (e) {
         console.log(e)
     }
-
-    api.getUser((err, data) => {
-        if(err) return console.log("Error", err)
-
-        console.log("[Callback] ScalaPrice", data)
-    })
 }
 
 main()
