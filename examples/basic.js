@@ -4,14 +4,14 @@ const Scallet = require('../index')
 const api = new Scallet({
     key: process.env.API_KEY,
     pass: process.env.API_PASS,
-    logging: true
+    logging: false
 })
 
 async function main() {
-    /* Test ScalaPrice */
     try {
+        /* Test ScalaPrice */
         const price = await api.scalaPrice()
-        console.log("[Promised] ScalaPrice", price)
+        console.log("[Promised] ScalaPrice:", price)
 
         /*  api.scalaPrice((err, data) => {
             if (err) return console.log("Error", err)
@@ -20,7 +20,7 @@ async function main() {
 
         /* Test User */
         const user = await api.getUser()
-        console.log("[Promised] getUser", user.user.name)
+        console.log("[Promised] getUser:", user.user.name)
 
         /*  api.getUser((err, data) => {
             if (err) return console.log("Error", err)
@@ -32,7 +32,7 @@ async function main() {
             enabled: true,
             url: 'snow'
         })
-        console.log("[Promised] postLink", link)
+        console.log("[Promised] postLink:", link)
     } catch (e) {
         console.log(e)
     }
