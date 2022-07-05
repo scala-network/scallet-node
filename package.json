@@ -13,6 +13,9 @@
     "payment",
     "gateway"
   ],
+  "repository": {
+    "url": "https://github.com/scala-network/scallet-node"
+  },
   "author": "PhilipJovanovic",
   "license": "MIT",
   "dependencies": {
