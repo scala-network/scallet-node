@@ -1,0 +1,21 @@
+{
+  "name": "scallet-node",
+  "version": "1.0.0",
+  "description": "Scallet API wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "env $(cat .env) node examples/basic"
+  },
+  "keywords": [
+    "scallet",
+    "crypto",
+    "scala",
+    "payment",
+    "gateway"
+  ],
+  "author": "PhilipJovanovic",
+  "license": "MIT",
+  "dependencies": {
+    "node-rest-client": "^3.1.1"
+  }
+}
